@@ -9,7 +9,7 @@
 ?>
 
 <?php get_sidebar('footerfull'); ?>
-
+<?php if (!is_front_page()) : ?>
 <div class="wrapper" id="wrapper-footer">
     
     <div class="container">
@@ -21,10 +21,6 @@
                 <footer id="colophon" class="site-footer" role="contentinfo">
 
                     <div class="site-info">
-                        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'understrap' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'understrap' ), 'WordPress' ); ?></a>
-                        <span class="sep"> | </span>
-                        <?php printf( __( 'Theme: %1$s by %2$s.', 'understrap' ), 'understrap', '<a href="http://understrap.com/" rel="designer">understrap.com</a>' ); ?> 
-                        (<?php printf( __( 'Version', 'understrap' ) ); ?>: 0.4.7)
                     </div><!-- .site-info -->
 
                 </footer><!-- #colophon -->
@@ -36,11 +32,41 @@
     </div><!-- container end -->
     
 </div><!-- wrapper end -->
+<?php endif; ?>
 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
+<script type="text/javascript">
+
+jQuery('.fadeOut').owlCarousel({
+    items: 1,
+    animateOut: 'fadeOut',
+    loop: true,
+    margin: 10,
+    autoplay: true
+});
+
+
+jQuery('.article-carousel.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+</script>
 
 </html>

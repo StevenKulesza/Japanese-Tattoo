@@ -18,6 +18,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400" rel="stylesheet">
 </head>
 
 <body <?php body_class(); ?>>
@@ -25,7 +26,9 @@
 <div id="page" class="hfeed site">
     
     <!-- ******************* The Navbar Area ******************* -->
-    <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
+<?php if ( !is_front_page() ) : ?>
+
+   <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
 	
         <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
 
@@ -54,7 +57,7 @@
 	                                <?php } else { the_custom_logo(); } ?><!-- end custom logo -->
 
                             </div>
-
+                            test
                             <!-- The WordPress Menu goes here -->
                             <?php wp_nav_menu(
                                     array(
@@ -72,7 +75,7 @@
         </nav><!-- .site-navigation -->
         
     </div><!-- .wrapper-navbar end -->
-
+    <?php endif ?> 
 
 
 

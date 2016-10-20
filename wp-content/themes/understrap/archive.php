@@ -9,6 +9,8 @@
 
 get_header(); ?>
 
+<?php get_template_part('article-carousel'); ?>
+<p>test</p>
 <div class="wrapper" id="archive-wrapper">
     
     <div  id="content" class="container">

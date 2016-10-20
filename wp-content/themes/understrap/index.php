@@ -25,12 +25,12 @@ get_header(); ?>
     }
     ?>
 
+    <div class="container">
+        <?php get_template_part('article-carousel'); ?>
+    </div>
     <div class="wrapper" id="wrapper-index">
-        
 	   <div id="content" class="container">
-
             <div class="row">
-           
     	       <div id="primary" class="<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>col-md-8<?php else : ?>col-md-12<?php endif; ?> content-area">
                    
                      <main id="main" class="site-main" role="main">
