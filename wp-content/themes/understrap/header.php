@@ -116,6 +116,7 @@ a{
     -moz-transition: ease-out 0.5s;
     -o-transition: ease-out 0.5s;
     transition: ease-out 0.5s;
+    color: #97722e;
 }
 a:hover{
     text-decoration: none;
@@ -126,6 +127,9 @@ a:hover{
     background-attachment: fixed;    
     color: #fff;
     padding: 100px 0px;
+}
+#page{
+    margin-top:60px;
 }
 /*
 *
@@ -148,7 +152,8 @@ Home Bottom Nav Bar (home-nav.php)
     top: 0;
 }
 .home-nav.fixed.top:after,
-.section-divider-container:after{
+.section-divider-container:after,
+.article-carousel-container:after{
     background-image: url(<?php bloginfo( 'stylesheet_directory' ); ?>/images/black-edge-bottom-light.png);
     content: "";
     position: absolute;
@@ -198,7 +203,7 @@ owl carousel (sidebar-hero.php)
 *
 *
 */
-.owl-carousel .item {
+.fadeOut.owl-carousel .item {
     height: 100vh;
     padding: 1rem;
     width: 100%;
@@ -260,12 +265,50 @@ owl carousel (sidebar-hero.php)
     color: #e5e5e5
 }
 /*article carousel*/
+.article-carousel-wrapper{
+    background: #272727;
+    padding: 20px 0px 20px;
+}
 .article-carousel.owl-carousel{  
-    height: 10rem;
-    background: #4DC7A0;
-    padding: 1rem;
-    margin-top: 120px;
+    height: 14rem;    
+    padding: 1rem 0;
   }
+.article-carousel.owl-carousel .owl-nav{
+    position: absolute;
+    width: 100%;
+    bottom: 42%;
+}
+.article-carousel.owl-carousel .owl-next,
+.article-carousel.owl-carousel .owl-prev{
+    display: inline-block;
+    background: white;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+.article-carousel.owl-carousel .owl-next{
+    float: right;
+}
+.article-carousel.owl-carousel .owl-stage-outer,
+.article-carousel.owl-carousel .owl-stage,
+.article-carousel.owl-carousel .owl-item{
+    height: 100%;
+}
+.article-carousel.owl-carousel .item{
+    background: #4DC7A0;
+    height: 100%
+}
+/*article*/
+img.wp-post-image{
+    width: 100%
+}
+.blog article{
+    background: #fff;
+    margin-bottom: 30px;
+    border:1px solid rgba(131, 133, 134, 0.08);
+}
+.blog article .article-text{
+    padding: 20px;
+}
 #map{
     width: 100%;
     height: 350px;
@@ -303,7 +346,6 @@ owl carousel (sidebar-hero.php)
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    margin-top:80px;
 }
 h1.entry-title{
     background: #97722e;

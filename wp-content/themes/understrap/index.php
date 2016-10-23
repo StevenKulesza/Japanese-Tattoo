@@ -24,10 +24,13 @@ get_header(); ?>
     // Do nothing...or?
     }
     ?>
-
-    <div class="container">
-        <?php get_template_part('article-carousel'); ?>
+<div class="article-carousel-container">
+    <div class="article-carousel-wrapper">
+        <div class="">
+            <?php get_template_part('article-carousel'); ?>
+        </div>
     </div>
+</div>
     <div class="wrapper" id="wrapper-index">
 	   <div id="content" class="container">
             <div class="row">

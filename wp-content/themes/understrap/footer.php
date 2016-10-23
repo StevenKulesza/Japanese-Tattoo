@@ -54,7 +54,7 @@
     
 </div><!-- wrapper end -->
     <div class="site-info text-center">
-       <p>© 2016 <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> | Built By <a href="stevenkulesza.com" target="_blank">Steven Kulesza</a></p>
+       <p>© 2016 <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> | Built By <a href="http://stevenkulesza.com" target="_blank">Steven Kulesza</a></p>
     </div>
 </div>
 <?php endif; ?>
@@ -76,6 +76,7 @@ jQuery('.fadeOut').owlCarousel({
 
 
 jQuery('.article-carousel.owl-carousel').owlCarousel({
+    stagePadding: 65,
     loop:true,
     margin:10,
     nav:true,
@@ -84,10 +85,10 @@ jQuery('.article-carousel.owl-carousel').owlCarousel({
             items:1
         },
         600:{
-            items:3
+            items:2
         },
         1000:{
-            items:5
+            items:3
         }
     }
 })
