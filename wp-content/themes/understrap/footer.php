@@ -38,12 +38,11 @@
                         </div>
                         <div class="col-sm-3">
                         <h5  class="footer-header">Connect With Us</h5>
+                        <?php echo get_template_part( 'social' ); ?>
                         </div>
                     </div>
-
-                    <div class="site-info text-center">
-                       <p>© 2016 <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> | Built By <a href="stevenkulesza.com" target="_blank">Steven Kulesza</a>.</p>
-                    </div>
+                    
+                    
 
                 </footer><!-- #colophon -->
 
@@ -54,6 +53,9 @@
     </div><!-- container end -->
     
 </div><!-- wrapper end -->
+    <div class="site-info text-center">
+       <p>© 2016 <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> | Built By <a href="stevenkulesza.com" target="_blank">Steven Kulesza</a></p>
+    </div>
 </div>
 <?php endif; ?>
 

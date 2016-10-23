@@ -86,6 +86,15 @@ h6{
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+p{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+h1 span{
+    color:#97722e;
 }
 .text-center{
     text-align: center;
@@ -111,6 +120,13 @@ a{
 a:hover{
     text-decoration: none;
 }
+.section-divider{
+    text-align: center;
+    background: url('<?php bloginfo( 'stylesheet_directory' ); ?>/images/arch-pattern.png') #1a1a1a;
+    background-attachment: fixed;    
+    color: #fff;
+    padding: 100px 0px;
+}
 /*
 *
 *
@@ -122,7 +138,7 @@ Home Bottom Nav Bar (home-nav.php)
 *
 */
 .home-nav{
-    background: #1a1a1a;
+    background: url(<?php bloginfo( 'stylesheet_directory' ); ?>/images/sayagata-pattern.png) #1a1a1a;
     position: absolute;
     width: 100%;
     z-index: 10;
@@ -131,7 +147,8 @@ Home Bottom Nav Bar (home-nav.php)
     position: fixed;
     top: 0;
 }
-.home-nav.fixed.top:after{
+.home-nav.fixed.top:after,
+.section-divider-container:after{
     background-image: url(<?php bloginfo( 'stylesheet_directory' ); ?>/images/black-edge-bottom-light.png);
     content: "";
     position: absolute;
@@ -141,13 +158,14 @@ Home Bottom Nav Bar (home-nav.php)
     background-repeat: repeat;
     left: 0;
     z-index: 5;
-    bottom:-5px;
+/*    bottom:-5px; */
 }
 .home-nav.bottom{
     bottom: 0;
 }
 .home-nav.bottom:before,
-.footer-bottom:before{
+.footer-bottom:before,
+.section-divider-container:before{
     margin-top: -5px;
     background-image: url(<?php bloginfo( 'stylesheet_directory' ); ?>/images/black-edge-top.png);
     content: "";
@@ -241,21 +259,41 @@ owl carousel (sidebar-hero.php)
 .owl-carousel .overlay .overlay-inner span a:hover {
     color: #e5e5e5
 }
-
+/*article carousel*/
+.article-carousel.owl-carousel{  
+    height: 10rem;
+    background: #4DC7A0;
+    padding: 1rem;
+    margin-top: 120px;
+  }
 #map{
     width: 100%;
     height: 350px;
 }
 /*footer*/
+.wrapper#wrapper-footer{
+    padding: 60px 0px;
+}
 .footer-bottom{
-    background: #1a1a1a;
-    
+    background: url('<?php bloginfo( 'stylesheet_directory' ); ?>/images/arch-pattern.png') #1a1a1a;
+    background-attachment: fixed;    
 }
 .footer-bottom a, .footer-bottom p{
     color: #fff;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=50);
-    opacity: 0.5;   
+    filter: alpha(opacity=80);
+    opacity: 0.8; 
+    margin-bottom: 0.8rem  
+}
+.footer-header{
+    color: #97722e;
+}
+.site-info{
+    background: #151515;
+    padding: 10px 0px 1px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 .feature-image-container{
     height: 400px;
@@ -275,6 +313,9 @@ h1.entry-title{
     margin: -50px 0px 0px;
     font-weight: 600;
     letter-spacing: 3px;
+}
+.fa-circle.fa-stack-1x, .fa-circle.fa-stack-2x{
+    color: #000;
 }
 </style>
 </head>

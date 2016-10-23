@@ -683,8 +683,7 @@ $wp_customize->add_control( 'themeslug_facebook-off', array(
     'section'  => 'themeslug_social_section',
     'type' => 'checkbox',
     'priority'    => 2,
-) );
- 
+) ); 
 /*** Google Plus (Theme Customizer) ***/
 $wp_customize->add_setting( 'themeslug_gplus',
     array (
@@ -750,6 +749,28 @@ $wp_customize->add_control( 'themeslug_instagram-off', array(
     'type' => 'checkbox',
     'priority'    => 8,
 ) );
+/*** Website (Theme Customizer) ***/
+$wp_customize->add_setting( 'themeslug_website',
+    array (
+        'default' => '#', 
+        ) );
+$wp_customize->add_control( 'themeslug_website', array(
+    'label'    => __( 'Website URL', 'themeslug' ),
+    'section'  => 'themeslug_social_section',
+    'type' => 'text',
+    'priority'    => 9,
+ ) );
+$wp_customize->add_setting( 'themeslug_website-off',
+    array (
+        'default' => '#', 
+) );
+$wp_customize->add_control( 'themeslug_website-off', array(
+    'label'    => __( 'Hide Website', 'themeslug' ),
+    'section'  => 'themeslug_social_section',
+    'type' => 'checkbox',
+    'priority'    => 10,
+) );
+
 
 /***************************************** II. Review Us *****************************************/
 
