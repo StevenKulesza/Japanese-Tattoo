@@ -270,7 +270,7 @@ owl carousel (sidebar-hero.php)
     padding: 20px 0px 20px;
 }
 .article-carousel.owl-carousel{  
-    height: 14rem;    
+    height: 100%;    
     padding: 1rem 0;
   }
 .article-carousel.owl-carousel .owl-nav{
@@ -294,8 +294,8 @@ owl carousel (sidebar-hero.php)
     height: 100%;
 }
 .article-carousel.owl-carousel .item{
-    background: #4DC7A0;
-    height: 100%
+/*    background: #4DC7A0;
+*/    height: 100%
 }
 /*article*/
 img.wp-post-image{
