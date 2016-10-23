@@ -19,7 +19,52 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400" rel="stylesheet">
+<?php if(is_page_template('page-templates/contact-fullwidth.php')) : ?>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+        var myLatlng = new google.maps.LatLng(33.7466244,-84.3745782);
+        function init() {
+            var mapOptions = {
+                zoom: 17,
+                disableDefaultUI: true,
+                zoomControl: false,
+                scrollwheel: false,
+                center: myLatlng, // Only You Tattoo
+                styles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2e5d4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#c5dac6"}]},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#c5c6c6"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#e4d7c6"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#fbfaf7"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#acbcc9"}]}]
+            };
+            var contentString = '<div style="text-align: center;" id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading"><b>Only You Tattoo</b></h4>'+
+            '<div id="bodyContent">'+
+            '<p><b><?php echo get_theme_mod( 'themeslug_phone' ); ?></b></p>'+
+            '<p><b><?php echo get_theme_mod( 'themeslug_address' ); ?></b></p>'+
+            '<p><a href="<?php echo get_theme_mod( 'themeslug_google_map' ); ?>">Get Directions On Google Maps</a></p>'+
+            '</div>'+
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+            var mapElement = document.getElementById('map');
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var image = '<?php bloginfo( 'stylesheet_directory' ); ?>/images/map_marker.png';
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: 'Only You Tattoo',
+                icon: image
+            });
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
+<?php endif ?>
+<?php get_template_part('css/style'); ?>
 <!-- Convert this to scss later... -->
 <style>
 /*
@@ -51,11 +96,20 @@ h6{
 .text-right{
     text-align: right;
 }
-.border-line{
-    width: 100%;
-    height: 1px;
-    background: #aa862e url('<?php bloginfo( 'stylesheet_directory' ); ?>/images/borderBG.jpg');
-    clear: both;
+.border-top-line{
+    border-top: 3px solid #97722e;
+}
+.border-bottom-line{
+  border-bottom: 3px solid #97722e;
+}
+a{
+    -webkit-transition: ease-out 0.5s;
+    -moz-transition: ease-out 0.5s;
+    -o-transition: ease-out 0.5s;
+    transition: ease-out 0.5s;
+}
+a:hover{
+    text-decoration: none;
 }
 /*
 *
@@ -69,22 +123,32 @@ Home Bottom Nav Bar (home-nav.php)
 */
 .home-nav{
     background: #1a1a1a;
-    border-top: 1px solid;
     position: absolute;
-    bottom: 0;
     width: 100%;
     z-index: 10;
 }
-.home-nav a{
-    color: #fff;
-    padding: 15px 10px;
+.home-nav.fixed.top{
+    position: fixed;
+    top: 0;
 }
-.home-nav a h4{
-    text-align: center;
-    font-weight: 100;
+.home-nav.fixed.top:after{
+    background-image: url(<?php bloginfo( 'stylesheet_directory' ); ?>/images/black-edge-bottom-light.png);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-size: auto 100%;
+    background-repeat: repeat;
+    left: 0;
+    z-index: 5;
+    bottom:-5px;
 }
-.home-nav:before{
-    top: -5px;
+.home-nav.bottom{
+    bottom: 0;
+}
+.home-nav.bottom:before,
+.footer-bottom:before{
+    margin-top: -5px;
     background-image: url(<?php bloginfo( 'stylesheet_directory' ); ?>/images/black-edge-top.png);
     content: "";
     position: absolute;
@@ -94,6 +158,17 @@ Home Bottom Nav Bar (home-nav.php)
     background-repeat: repeat;
     left: 0;
     z-index: 5;
+}
+.home-nav a{
+    color: #fff;
+    padding: 15px 10px;
+}
+.home-nav a h4{
+    text-align: center;
+    font-weight: 100;
+}
+.home-nav a:hover{
+    color:#97722e;
 }
 /*
 *
@@ -110,75 +185,96 @@ owl carousel (sidebar-hero.php)
     padding: 1rem;
     width: 100%;
 }
-.owl-carousel .item.slide1{
-    background: url(wp-content/themes/understrap/images/slide1.jpg) 100% 100%;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-}
-.owl-carousel .item.slide2{
-    background: url(wp-content/themes/understrap/images/slide2.jpg) 100% 100%;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-}
-.owl-carousel .item.slide3{
-    background: url(wp-content/themes/understrap/images/slide3.jpg) 100% 100%;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-}
-.owl-carousel .item.slide4{
-    background: url(wp-content/themes/understrap/images/slide4.jpg) 100% 100%;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-}
-.owl-carousel .item.slide5{
-    background: url(wp-content/themes/understrap/images/slide5.jpg) 100% 100%;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-}
-.owl-carousel .item.slide6{
-    background: url(wp-content/themes/understrap/images/slide6.jpg) 100% 100%;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-}
-.owl-carousel .item.slide7{
-    background: url(wp-content/themes/understrap/images/slide7.jpg) 100% 100%;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-}
-.owl-carousel .item.slide8{
-    background: url(wp-content/themes/understrap/images/slide8.jpg) 100% 100%;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-}
-
 .owl-carousel .item h4 {
     color: #FFF;
     font-weight: 400;
     margin-top: 0rem
+}
+.owl-carousel .overlay {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.owl-carousel .overlay .overlay-inner {
+    display: table;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    max-width: 650px;
+    margin: 0 auto
+}
+
+.owl-carousel .overlay .overlay-inner span {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    text-shadow: 0 0 10px black
+}
+
+.owl-carousel .overlay .overlay-inner span h1, .owl-carousel .overlay .overlay-inner span h2 {
+    padding: 0 10px
+}
+
+.owl-carousel .overlay .overlay-inner span h1 {
+    font-size: 2.2em;
+    line-height: 1.2em;
+    margin-bottom: 10px
+}
+
+.owl-carousel .overlay .overlay-inner span h2 {
+    font-size: 1.1em;
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 1.2em
+}
+
+.owl-carousel .overlay .overlay-inner span a {
+    color: white
+}
+
+.owl-carousel .overlay .overlay-inner span a:hover {
+    color: #e5e5e5
+}
+
+#map{
+    width: 100%;
+    height: 350px;
+}
+/*footer*/
+.footer-bottom{
+    background: #1a1a1a;
+    
+}
+.footer-bottom a, .footer-bottom p{
+    color: #fff;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=50);
+    opacity: 0.5;   
+}
+.feature-image-container{
+    height: 400px;
+    overflow: hidden;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top:80px;
+}
+h1.entry-title{
+    background: #97722e;
+    color: #fff;
+    display: inline-block;
+    padding: 30px 20px 30px 20px;
+    margin: -50px 0px 0px;
+    font-weight: 600;
+    letter-spacing: 3px;
 }
 </style>
 </head>
@@ -188,56 +284,8 @@ owl carousel (sidebar-hero.php)
 <div id="page" class="hfeed site">
     
     <!-- ******************* The Navbar Area ******************* -->
-<?php if ( !is_front_page() ) : ?>
+    <?php get_template_part('home-nav'); ?>
 
-   <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
-	
-        <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
-
-        <nav class="navbar navbar-dark bg-inverse site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-                            
-
-                <div class="container">
-
-
-                            <div class="navbar-header">
-
-                                <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-
-                                  <button class="navbar-toggle hidden-sm-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-
-                                <!-- Your site title as branding in the menu -->
-	                                <?php if (!has_custom_logo()) { ?>
-		                                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-		                                	<?php bloginfo( 'name' ); ?>
-		                                </a>
-	                                <?php } else { the_custom_logo(); } ?><!-- end custom logo -->
-
-                            </div>
-                            test
-                            <!-- The WordPress Menu goes here -->
-                            <?php wp_nav_menu(
-                                    array(
-                                        'theme_location' => 'primary',
-                                        'container_class' => 'collapse navbar-toggleable-xs exCollapsingNavbar',
-                                        'menu_class' => 'nav navbar-nav',
-                                        'fallback_cb' => '',
-                                        'menu_id' => 'main-menu',
-                                        'walker' => new wp_bootstrap_navwalker()
-                                    )
-                            ); ?>
-
-                </div> <!-- .container -->
-            
-        </nav><!-- .site-navigation -->
-        
-    </div><!-- .wrapper-navbar end -->
-    <?php endif ?> 
 
 
 

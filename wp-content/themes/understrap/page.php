@@ -19,7 +19,6 @@ get_header(); ?>
         <div class="row">
         
     	   <div id="primary" class="<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>col-md-8<?php else : ?>col-md-12<?php endif; ?> content-area">
-           
                  <main id="main" class="site-main" role="main">
 
                     <?php while ( have_posts() ) : the_post(); ?>
@@ -29,7 +28,7 @@ get_header(); ?>
                         <?php
                             // If comments are open or we have at least one comment, load up the comment template
                             if ( comments_open() || get_comments_number() ) :
-                                comments_template();
+                                // comments_template();
                             endif;
                         ?>
 

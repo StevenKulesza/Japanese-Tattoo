@@ -239,7 +239,7 @@ $wp_customize->add_control( 'themeslug_menu_item_4_link', array(
 
 /***************************************** III. Contact Info *****************************************/
 $wp_customize->add_section( 'themeslug_contact_section' , array(
-    'title'       => __( 'Contact Info', 'themeslug' ),
+    'title'       => __( 'Contact Page & Footer', 'themeslug' ),
     'priority'    => 30,
     'description' => 'Phone, address, email',
     'panel' => 'panel_1',
@@ -286,14 +286,16 @@ $wp_customize->add_control( 'themeslug_google_map', array(
     'type' => 'text',
     'priority'    => 3
 ) );
-$wp_customize->add_setting( 'themeslug_google_map_embedded',
-    array (
-        'default' => '#',
-         ) );
+$wp_customize->add_setting( 'themeslug_google_map_embedded' );
 $wp_customize->add_control( 'themeslug_google_map_embedded', array(
-    'label'    => __( 'Google Map Embedded Link', 'themeslug' ),
+    'label'    => __( 'Hide Google Map on Contact Page', 'themeslug' ),
     'section'  => 'themeslug_contact_section',
-    'type' => 'text',
+    'type' => 'select',
+    'default' => 'No',
+    'choices' => array(
+        'value1' => 'Yes',
+        'value2' => 'No',
+        ),
     'priority'    => 3
 ) );
 
@@ -336,7 +338,7 @@ $wp_customize->add_panel( 'panel_3', array(
 $wp_customize->add_section( 'themeslug_fheader_section' , array(
     'title'       => __( 'Homepage Image Slider', 'themeslug' ),
     'priority'    => 10,
-    'description' => ' The Homepage Image Slider - Add up to 8 slides. I recommend that ALL image sizes to be exactly 1400x700.',
+    'description' => ' The Homepage Image Slider - Add up to 5 slides. I recommend that ALL image sizes to be exactly 1400x700.',
     'panel' => 'panel_3',
 ) );
 
@@ -360,22 +362,12 @@ $wp_customize->add_control( 'themeslug_slide1_descr', array(
     'type' => 'text',
     'priority'    => 8
 ) );
-$wp_customize->add_setting( 'themeslug_slide1_button',
-    array (
-        'default' => 'Learn More', 
-) );
-$wp_customize->add_control( 'themeslug_slide1_button', array(
-    'label'    => __( 'Slide 1 button button text', 'themeslug' ),
-    'section'  => 'themeslug_fheader_section',
-    'type' => 'text',
-    'priority'    => 9
-) );
 $wp_customize->add_setting( 'themeslug_slide1_link',
     array (
         'default' => '#', 
 ) );
 $wp_customize->add_control( 'themeslug_slide1_link', array(
-    'label'    => __( 'Slide 1 button link', 'themeslug' ),
+    'label'    => __( 'Slide 1 link', 'themeslug' ),
     'section'  => 'themeslug_fheader_section',
     'type' => 'text',
     'priority'    => 10
@@ -419,22 +411,12 @@ $wp_customize->add_control( 'themeslug_slide2_descr', array(
     'type' => 'text',
     'priority'    => 14
 ) );
-$wp_customize->add_setting( 'themeslug_slide2_button',
-    array (
-        'default' => 'Learn More', 
-) );
-$wp_customize->add_control( 'themeslug_slide2_button', array(
-    'label'    => __( 'Slide 2 button button text', 'themeslug' ),
-    'section'  => 'themeslug_fheader_section',
-    'type' => 'text',
-    'priority'    => 15
-) );
 $wp_customize->add_setting( 'themeslug_slide2_link',
     array (
         'default' => '#', 
 ) );
 $wp_customize->add_control( 'themeslug_slide2_link', array(
-    'label'    => __( 'Slide 2 button link', 'themeslug' ),
+    'label'    => __( 'Slide 2 link', 'themeslug' ),
     'section'  => 'themeslug_fheader_section',
     'type' => 'text',
     'priority'    => 16
@@ -478,22 +460,12 @@ $wp_customize->add_control( 'themeslug_slide3_descr', array(
     'type' => 'text',
     'priority'    => 20
 ) );
-$wp_customize->add_setting( 'themeslug_slide3_button',
-    array (
-        'default' => 'Learn More', 
-) );
-$wp_customize->add_control( 'themeslug_slide3_button', array(
-    'label'    => __( 'Slide 3 button button text', 'themeslug' ),
-    'section'  => 'themeslug_fheader_section',
-    'type' => 'text',
-    'priority'    => 21
-) );
 $wp_customize->add_setting( 'themeslug_slide3_link',
     array (
         'default' => '#', 
 ) );
 $wp_customize->add_control( 'themeslug_slide3_link', array(
-    'label'    => __( 'Slide 3 button link', 'themeslug' ),
+    'label'    => __( 'Slide 3 link', 'themeslug' ),
     'section'  => 'themeslug_fheader_section',
     'type' => 'text',
     'priority'    => 22
@@ -537,22 +509,12 @@ $wp_customize->add_control( 'themeslug_slide4_descr', array(
     'type' => 'text',
     'priority'    => 26
 ) );
-$wp_customize->add_setting( 'themeslug_slide4_button',
-    array (
-        'default' => 'Learn More', 
-) );
-$wp_customize->add_control( 'themeslug_slide4_button', array(
-    'label'    => __( 'Slide 4 button button text', 'themeslug' ),
-    'section'  => 'themeslug_fheader_section',
-    'type' => 'text',
-    'priority'    => 27
-) );
 $wp_customize->add_setting( 'themeslug_slide4_link',
     array (
         'default' => '#', 
 ) );
 $wp_customize->add_control( 'themeslug_slide4_link', array(
-    'label'    => __( 'Slide 4 button link', 'themeslug' ),
+    'label'    => __( 'Slide 4 link', 'themeslug' ),
     'section'  => 'themeslug_fheader_section',
     'type' => 'text',
     'priority'    => 28
@@ -596,22 +558,12 @@ $wp_customize->add_control( 'themeslug_slide5_descr', array(
     'type' => 'text',
     'priority'    => 32
 ) );
-$wp_customize->add_setting( 'themeslug_slide5_button',
-    array (
-        'default' => 'Learn More', 
-) );
-$wp_customize->add_control( 'themeslug_slide5_button', array(
-    'label'    => __( 'Slide 5 button button text', 'themeslug' ),
-    'section'  => 'themeslug_fheader_section',
-    'type' => 'text',
-    'priority'    => 33
-) );
 $wp_customize->add_setting( 'themeslug_slide5_link',
     array (
         'default' => '#', 
 ) );
 $wp_customize->add_control( 'themeslug_slide5_link', array(
-    'label'    => __( 'Slide 5 button link', 'themeslug' ),
+    'label'    => __( 'Slide 5 link', 'themeslug' ),
     'section'  => 'themeslug_fheader_section',
     'type' => 'text',
     'priority'    => 34

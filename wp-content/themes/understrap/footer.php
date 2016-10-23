@@ -8,8 +8,9 @@
  */
 ?>
 
-<?php get_sidebar('footerfull'); ?>
+
 <?php if (!is_front_page()) : ?>
+<div class="footer-bottom border-bottom-line">
 <div class="wrapper" id="wrapper-footer">
     
     <div class="container">
@@ -19,9 +20,30 @@
             <div class="col-md-12">
     
                 <footer id="colophon" class="site-footer" role="contentinfo">
+                
+                    <div class="row">
+                        <div class="col-sm-3">
+                        <h5 class="footer-header">About Us</h5>
+                        <p><?php echo get_theme_mod( 'themeslug_about-text' ); ?></p>
+                        </div>
+                        <div class="col-sm-3">
+                        <h5 class="footer-header">Contact Us</h5>
+                        <p><?php echo get_theme_mod( 'themeslug_email' ); ?></p>
+                        <p><?php echo get_theme_mod( 'themeslug_phone' ); ?></p>
+                        </div>
+                        <div class="col-sm-3">
+                        <h5  class="footer-header">Find Us</h5>
+                        <p><?php echo get_theme_mod( 'themeslug_address' ); ?></p>
+                        <p><a href="<?php echo get_theme_mod( 'themeslug_google_map' ); ?>">Get Directions</a></p>
+                        </div>
+                        <div class="col-sm-3">
+                        <h5  class="footer-header">Connect With Us</h5>
+                        </div>
+                    </div>
 
-                    <div class="site-info">
-                    </div><!-- .site-info -->
+                    <div class="site-info text-center">
+                       <p>© 2016 <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> | Built By <a href="stevenkulesza.com" target="_blank">Steven Kulesza</a>.</p>
+                    </div>
 
                 </footer><!-- #colophon -->
 
@@ -32,10 +54,10 @@
     </div><!-- container end -->
     
 </div><!-- wrapper end -->
+</div>
 <?php endif; ?>
 
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 </body>
