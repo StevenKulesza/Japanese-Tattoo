@@ -88,10 +88,20 @@ h6{
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+h2,
+h3,
+h4,
+h5,
+h6{
+    color:#97722e;
+}
 p{
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
     letter-spacing: 0.5px;
+}
+h2.entry-title{
+    font-weight: 400;
 }
 h1 span{
     color:#97722e;
@@ -128,8 +138,53 @@ a:hover{
     color: #fff;
     padding: 100px 0px;
 }
+.home #page{
+    margin-top: 0;
+}
 #page{
     margin-top:60px;
+}
+.post-edit-link{
+    background: yellow;
+    padding: 5PX 5PX;
+}
+
+.btn{
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff !important;
+}
+.btn.btn-primary{
+    background-color: #97722e;
+    border-color: #97722e;
+}
+.btn.btn-primary:hover{
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+.btn.btn-secondary{
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+.btn.btn-sm{
+    font-size: 10px;
+    padding:10px 30px;
+}
+.wpcf7 input,
+.wpcf7 label,
+.wpcf7 textarea {
+    width: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-width: 1px;
+    border-color: #97722e;
+}
+.wpcf7 input,
+.wpcf7 textarea {
+    line-height: 28px;
+    padding: 10px;
 }
 /*
 *
@@ -142,7 +197,7 @@ Home Bottom Nav Bar (home-nav.php)
 *
 */
 .home-nav{
-    background: url(<?php bloginfo( 'stylesheet_directory' ); ?>/images/sayagata-pattern.png) #1a1a1a;
+    background: url(<?php bloginfo( 'stylesheet_directory' ); ?>/images/arch-pattern.png) #1a1a1a;
     position: absolute;
     width: 100%;
     z-index: 10;
@@ -185,6 +240,14 @@ Home Bottom Nav Bar (home-nav.php)
 .home-nav a{
     color: #fff;
     padding: 15px 10px;
+}
+.home-nav .navbar-brand>img{
+    width: 230px;
+    display: inline-block;
+}
+.home-nav .navbar-brand{
+    float: none;
+    display: block;
 }
 .home-nav a h4{
     text-align: center;
@@ -247,14 +310,16 @@ owl carousel (sidebar-hero.php)
 .owl-carousel .overlay .overlay-inner span h1 {
     font-size: 2.2em;
     line-height: 1.2em;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    color: #fff;
 }
 
 .owl-carousel .overlay .overlay-inner span h2 {
     font-size: 1.1em;
     margin-bottom: 0;
     font-weight: 300;
-    line-height: 1.2em
+    line-height: 1.2em;
+    color: #fff;
 }
 
 .owl-carousel .overlay .overlay-inner span a {
@@ -272,7 +337,13 @@ owl carousel (sidebar-hero.php)
 .article-carousel.owl-carousel{  
     height: 100%;    
     padding: 1rem 0;
-  }
+}
+.article-carousel.owl-carousel .item h5 {
+    color: #FFF;
+    font-weight: 300;
+    margin-top: 0rem
+    letter-spacing:1px;
+}
 .article-carousel.owl-carousel .owl-nav{
     position: absolute;
     width: 100%;
@@ -294,21 +365,32 @@ owl carousel (sidebar-hero.php)
     height: 100%;
 }
 .article-carousel.owl-carousel .item{
-/*    background: #4DC7A0;
-*/    height: 100%
+   height: 100%
 }
 /*article*/
 img.wp-post-image{
     width: 100%
+}
+.single .post img.wp-post-image{
+    padding: 15px 0px 30px;
 }
 .blog article{
     background: #fff;
     margin-bottom: 30px;
     border:1px solid rgba(131, 133, 134, 0.08);
 }
+
 .blog article .article-text{
     padding: 20px;
 }
+.navigation.posts-navigation,
+.navigation.post-navigation{
+    text-align: center;
+    padding: 80px;
+    background: #fff;
+    border: 1px solid #e3e2e1;
+}
+/*contact*/
 #map{
     width: 100%;
     height: 350px;
@@ -356,9 +438,91 @@ h1.entry-title{
     font-weight: 600;
     letter-spacing: 3px;
 }
-.fa-circle.fa-stack-1x, .fa-circle.fa-stack-2x{
+.fa-circle.fa-stack-1x, 
+.fa-circle.fa-stack-2x{
     color: #000;
 }
+.fa{
+    -webkit-transition: ease-out 0.5s;
+    -moz-transition: ease-out 0.5s;
+    -o-transition: ease-out 0.5s;
+    transition: ease-out 0.5s;
+    cursor:pointer;
+}
+.fa:hover, 
+.fa:hover{
+    color: #97722e;
+}
+
+.fa.fa-bars{
+    font-size: 40px;
+    color: #97722e;
+    padding: 15px 0px;
+}
+.fa.fa-bars:hover{
+    color: #fff;
+}
+/* The Overlay (background) */
+.nav-overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 100000; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: #1a1a1a; /* Black fallback color */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.nav-overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.nav-overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #97722e;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+}
+
+/* When you mouse over the navigation links, change their color */
+.nav-overlay a:hover, .nav-overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.nav-overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .nav-overlay a {font-size: 20px}
+    .nav-overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
 </style>
 </head>
 

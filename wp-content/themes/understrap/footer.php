@@ -61,16 +61,26 @@
 
 </div><!-- #page -->
 <?php wp_footer(); ?>
-
+<?php echo get_template_part( 'modals' ); ?>
 </body>
 
 <script type="text/javascript">
+/* Mobile Navigation Open */
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+/* Mobile Navigation Close */
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+
 
 jQuery('.fadeOut').owlCarousel({
     items: 1,
     animateOut: 'fadeOut',
     loop: true,
     margin: 10,
+    lazyLoad:true,
     autoplay: true
 });
 
