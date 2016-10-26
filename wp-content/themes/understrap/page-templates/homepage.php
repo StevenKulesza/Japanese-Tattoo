@@ -9,6 +9,4 @@
 
 get_header(); ?>
 <?php get_sidebar('hero'); ?>
-<div class="border-line"></div>
-
 <?php get_footer(); ?>
