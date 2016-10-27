@@ -61,8 +61,15 @@
 
 </div><!-- #page -->
 <?php wp_footer(); ?>
-<?php echo get_template_part( 'modals' ); ?>
+
+<?php if(is_page_template('page-templates/contact-fullwidth.php')) : ?>
+    <?php echo get_template_part( 'modals' ); ?>
+<?php endif ?>
 </body>
+
+<?php if(is_page_template('page-templates/contact-fullwidth.php')) : ?>
+    <?php get_template_part('map'); ?>
+<?php endif ?>
 
 <script type="text/javascript">
 /* Mobile Navigation Open */
