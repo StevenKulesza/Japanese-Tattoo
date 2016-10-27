@@ -29,19 +29,7 @@ get_header(); ?>
                 <?php endwhile; // end of the loop. ?>
                 </div>
             </div>
-                <div class="section-divider-container">
-                    <section class="section-divider">
-                        <div class="container">
-                        <h1>Matt Greenhalgh: <br><span>Japanese Tattoo In Atlanta Georgia</span></h1>
-                        </div>
-                    </section>
-                </div>
-                <div class="container wrapper">
-                    <?php echo do_shortcode('[instagram-feed]'); ?>
-                </div>
-
             </main><!-- #main -->
-           
 	    </div><!-- #primary -->
         
     </div><!-- Container end -->
