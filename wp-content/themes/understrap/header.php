@@ -19,11 +19,6 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400" rel="stylesheet">
-
-<?php if(is_page_template('page-templates/contact-fullwidth.php')) : ?>
-    <?php get_template_part('map'); ?>
-<?php endif ?>
-
 <?php get_template_part('css/style'); ?>
 </head>
 

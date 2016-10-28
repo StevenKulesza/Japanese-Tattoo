@@ -46,28 +46,4 @@ these are here for theme customizr
         -o-background-size: cover;
         background-position: center;
     }
-    .owl-carousel .item.slide6{
-        background: url(<?php echo get_theme_mod( 'themeslug_slide6_pic' ); ?>) 100% 100%;
-        background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        background-position: center;
-    }
-    .owl-carousel .item.slide7{
-        background: url(<?php echo get_theme_mod( 'themeslug_slide7_pic' ); ?>) 100% 100%;
-        background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        background-position: center;
-    }
-    .owl-carousel .item.slide8{
-        background: url(<?php echo get_theme_mod( 'themeslug_slide8_pic' ); ?>) 100% 100%;
-        background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        background-position: center;
-    }
 </style>
