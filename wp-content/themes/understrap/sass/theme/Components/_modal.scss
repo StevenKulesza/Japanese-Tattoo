@@ -1,0 +1,15 @@
+.wpcf7 input,
+.wpcf7 label,
+.wpcf7 textarea {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-width: 1px;
+  border-color: $color-sec;
+}
+
+.wpcf7 input,
+.wpcf7 textarea {
+  line-height: 28px;
+  padding: 10px;
+}

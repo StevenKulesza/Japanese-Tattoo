@@ -1,0 +1,79 @@
+/*
+*
+*
+*
+*
+Home Bottom Nav Bar (home-nav.php)
+*
+*
+*
+*/
+
+.home-nav {
+  background: url(#{$stylesheet-img}/arch-pattern.png) $color-prim;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.home-nav.fixed.top {
+  position: fixed;
+  top: 0;
+}
+
+.home-nav.fixed.top:after,
+.section-divider-container:after,
+.article-carousel-container:after {
+  background-image: url(#{$stylesheet-img}/black-edge-bottom-light.png);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-size: auto 100%;
+  background-repeat: repeat;
+  left: 0;
+  z-index: 5;
+}
+
+.home-nav.bottom {
+  bottom: 0;
+}
+
+.home-nav.bottom:before,
+.footer-bottom:before,
+.section-divider-container:before {
+  margin-top: -5px;
+  background-image: url(#{$stylesheet-img}/black-edge-top.png);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-size: auto 100%;
+  background-repeat: repeat;
+  left: 0;
+  z-index: 5;
+}
+
+.home-nav a {
+  color: $white;
+  padding: 15px 10px;
+}
+
+.home-nav .navbar-brand>img {
+  width: 230px;
+  display: inline-block;
+}
+
+.home-nav .navbar-brand {
+  float: none;
+  display: block;
+}
+
+.home-nav a h4 {
+  text-align: center;
+  font-weight: 100;
+}
+
+.home-nav a:hover {
+  color: $color-sec;
+}

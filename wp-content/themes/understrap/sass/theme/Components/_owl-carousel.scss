@@ -1,0 +1,135 @@
+/*
+*
+*
+*
+*
+owl carousel (sidebar-hero.php)
+*
+*
+*
+*/
+
+.fadeOut.owl-carousel .item {
+  height: 100vh;
+  padding: 1rem;
+  width: 100%;
+}
+
+.owl-carousel .item h4 {
+  color: $white;
+  font-weight: 400;
+  margin-top: 0rem
+}
+
+.owl-carousel .overlay {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.owl-carousel .overlay .overlay-inner {
+  display: table;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  max-width: 650px;
+  margin: 0 auto
+}
+
+.owl-carousel .overlay .overlay-inner span {
+  display: table-cell;
+  vertical-align: middle;
+  color: $white;
+  text-shadow: 0 0 10px $black;
+}
+
+.owl-carousel .overlay .overlay-inner span h1,
+.owl-carousel .overlay .overlay-inner span h2 {
+  padding: 0 10px
+}
+
+.owl-carousel .overlay .overlay-inner span h1 {
+  font-size: 2.2em;
+  line-height: 1.2em;
+  margin-bottom: 10px;
+  color: $white;
+}
+
+.owl-carousel .overlay .overlay-inner span h2 {
+  font-size: 1.1em;
+  margin-bottom: 0;
+  font-weight: 300;
+  line-height: 1.2em;
+  color: $white;
+}
+
+.owl-carousel .overlay .overlay-inner span a {
+  color: $white
+}
+
+.owl-carousel .overlay .overlay-inner span a:hover {
+  color: $white;
+}
+
+
+/*
+*
+*
+*
+*
+article owl carousel (article-carousel.php)
+*
+*
+*
+*/
+
+.article-carousel-wrapper {
+  background: $color-ter;
+  padding: 20px 0px 20px;
+}
+
+.article-carousel.owl-carousel {
+  height: 100%;
+  padding: 1rem 0;
+}
+
+.article-carousel.owl-carousel .item h5 {
+  color: $white;
+  font-weight: 300;
+  margin-top: 0rem;
+  letter-spacing: 1px;
+}
+
+.article-carousel.owl-carousel .owl-nav {
+  position: absolute;
+  width: 100%;
+  bottom: 42%;
+}
+
+.article-carousel.owl-carousel .owl-next,
+.article-carousel.owl-carousel .owl-prev {
+  display: inline-block;
+  background: white;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.article-carousel.owl-carousel .owl-next {
+  float: right;
+}
+
+.article-carousel.owl-carousel .owl-stage-outer,
+.article-carousel.owl-carousel .owl-stage,
+.article-carousel.owl-carousel .owl-item {
+  height: 100%;
+}
+
+.article-carousel.owl-carousel .item {
+  height: 100%
+}
