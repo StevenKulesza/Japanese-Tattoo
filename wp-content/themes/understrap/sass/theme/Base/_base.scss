@@ -1,8 +1,11 @@
+//  Main Text 
+// ------------------------------
 p {
   font-family: $stack-serif;
   font-weight: 300;
   letter-spacing: 0.5px;
 }
+
 h1,
 h2,
 h3,
@@ -22,38 +25,49 @@ h5,
 h6 {
   color: $color-sec;
 }
+h1{
+  & span{
+    color: $color-sec;    
+  }
+  &.entry-title{
+    background: $color-sec;
+    color: $white;
+    display: inline-block;
+    padding: 30px 20px 30px 20px;
+    margin: -50px 0px 0px;
+    font-weight: 600;
+    letter-spacing: 3px;
+  }
 
-h2.entry-title {
-  font-weight: 400;
 }
-
-h1 span {
-  color: $color-sec;
+h2{
+  &.entry-title{
+    font-weight: 400;
+  }
 }
-
 a {
   color: $color-sec;
   @include transition(.5s ease-out);
-  &:hover{
-  	text-decoration: none;
+  &:hover {
+    text-decoration: none;
   }
 }
+//  Text Align
+// ------------------------------
 .text-center {
   text-align: center;
 }
-
 .text-left {
   text-align: left;
 }
-
 .text-right {
   text-align: right;
 }
-
+// Borders & seperators
+// ------------------------------
 .border-top-line {
   border-top: 3px solid $color-sec;
 }
-
 .border-bottom-line {
   border-bottom: 3px solid $color-sec;
 }
@@ -64,44 +78,41 @@ a {
   color: $white;
   padding: 100px 0px;
 }
-
 .home #page {
   margin-top: 0;
 }
-
 #page {
   margin-top: 60px;
 }
-
+// admin only
 .post-edit-link {
   background: yellow;
   padding: 5px 5px;
 }
 
-
-
-
-
-/*article*/
-
+//  Article
+// ------------------------------
+.feature-image-container {
+  height: 400px;
+  overflow: hidden;
+  background-position: center center;
+  @include background-size(cover);
+}
 img.wp-post-image {
   width: 100%
 }
-
 .single .post img.wp-post-image {
   padding: 15px 0px 30px;
 }
-
 .blog article {
   background: $white;
   margin-bottom: 30px;
   border: 1px solid rgba(131, 133, 134, 0.08);
-}
 
-.blog article .article-text {
-  padding: 20px;
+  & .article-text{
+    padding: 20px;
+  }
 }
-
 .navigation.posts-navigation,
 .navigation.post-navigation {
   text-align: center;
@@ -111,175 +122,9 @@ img.wp-post-image {
 }
 
 
-/*contact*/
-
+//  Contact
+// ------------------------------
 #map {
   width: 100%;
   height: 350px;
 }
-
-
-/*footer*/
-
-.wrapper#wrapper-footer {
-  padding: 60px 0px;
-}
-
-.footer-bottom {
-  background: url('#{$stylesheet-img}/arch-pattern.png') $color-prim;
-  background-attachment: fixed;
-}
-
-.footer-bottom a,
-.footer-bottom p {
-  color: $white;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-  filter: alpha(opacity=80);
-  opacity: 0.8;
-  margin-bottom: 0.8rem
-}
-
-.footer-header {
-  color: $color-sec;
-}
-
-.site-info {
-  background: #151515;
-  padding: 10px 0px 1px;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-.feature-image-container {
-  height: 400px;
-  overflow: hidden;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-h1.entry-title {
-  background: $color-sec;
-  color: $white;
-  display: inline-block;
-  padding: 30px 20px 30px 20px;
-  margin: -50px 0px 0px;
-  font-weight: 600;
-  letter-spacing: 3px;
-}
-
-.fa-circle.fa-stack-1x,
-.fa-circle.fa-stack-2x {
-  color: $color-ter;
-}
-
-.fa {
-  cursor: pointer;
-  @include transition(.5s, ease-out);
-}
-
-.fa:hover,
-.fa:hover {
-  color: $color-sec;
-}
-
-.fa.fa-bars {
-  font-size: 40px;
-  color: $color-sec;
-  padding: 15px 0px;
-}
-
-.fa.fa-bars:hover {
-  color: $white;
-}
-
-
-/* The Overlay (background) */
-
-.nav-overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */
-  height: 0;
-  width: 100%;
-  position: fixed;
-  /* Stay in place */
-  z-index: 100000;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  background-color: $color-prim;
-  /* Black fallback color */
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-}
-
-
-/* Position the content inside the overlay */
-
-.nav-overlay-content {
-  position: relative;
-  top: 25%;
-  /* 25% from the top */
-  width: 100%;
-  /* 100% width */
-  text-align: center;
-  /* Centered text/links */
-  margin-top: 30px;
-  /* 30px top margin to avoid conflict with the close button on smaller screens */
-}
-
-
-/* The navigation links inside the overlay */
-
-.nav-overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: $color-sec;
-  display: block;
-  /* Display block instead of inline */
-  transition: 0.3s;
-  /* Transition effects on hover (color) */
-  font-family: $stack-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-
-/* When you mouse over the navigation links, change their color */
-
-.nav-overlay a:hover,
-.nav-overlay a:focus {
-  color: #f1f1f1;
-}
-
-
-/* Position the close button (top right corner) */
-
-.nav-overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-
-/* When the height of the screen is less than 450 pixels, 
-change the font-size of the links and position the close button again, so they don't overlap */
-
-@media screen and (max-height: 450px) {
-  .nav-overlay a {
-    font-size: 20px
-  }
-  .nav-overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-

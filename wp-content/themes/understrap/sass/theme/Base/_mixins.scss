@@ -1,4 +1,5 @@
 // Set a rem font size with pixel fallback
+// ------------------------------
 @function calculateRem($size) {
   $remSize: $size / 16px;
   @return $remSize * 1rem;
@@ -9,6 +10,7 @@
 }
 
 // Transitions
+// ------------------------------
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
@@ -17,7 +19,18 @@
   transition: $args;
 }
 
+// Background Size
+// ------------------------------
+@mixin background-size($args...) {
+  -webkit-background-size: $args;
+  -moz-background-size: $args;
+  -ms-background-size: $args;
+  -o-background-size: $args;
+  background-size: $args;
+}
+
 // Cross browser opacity
+// ------------------------------
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacity-ie: $opacity * 100;

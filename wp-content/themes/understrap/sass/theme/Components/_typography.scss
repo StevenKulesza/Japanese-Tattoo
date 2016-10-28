@@ -1,0 +1,25 @@
+//  Font Awesome
+// ------------------------------
+.fa-circle.fa-stack-1x,
+.fa-circle.fa-stack-2x {
+  color: $color-ter;
+}
+
+.fa {
+  cursor: pointer;
+  @include transition(.5s, ease-out);
+  
+  &:hover {
+    color: $color-sec;
+  }
+  
+  &.fa-bars {
+    font-size: 40px;
+    color: $color-sec;
+    padding: 15px 0px;
+    
+    &:hover {
+      color: $white;
+    }
+  }
+}

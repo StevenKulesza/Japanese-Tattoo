@@ -1,24 +1,39 @@
-/*
-*
-*
-*
-*
-Home Bottom Nav Bar (home-nav.php)
-*
-*
-*
-*/
+// Home Bottom Nav Bar (home-nav.php)
+// ------------------------------
 
 .home-nav {
   background: url(#{$stylesheet-img}/arch-pattern.png) $color-prim;
   position: absolute;
   width: 100%;
   z-index: 10;
-}
+  & a {
+    color: $white;
+    padding: 15px 10px;
 
-.home-nav.fixed.top {
-  position: fixed;
-  top: 0;
+    & h4 {
+      text-align: center;
+      font-weight: 100;
+    }
+    &:hover {
+      color: $color-sec;
+    }
+  }
+  &.fixed.top {
+    position: fixed;
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  // the logo
+  & .navbar-brand {
+  float: none;
+  display: block;
+    &>img {
+      width: 230px;
+      display: inline-block;
+    }
+  }
 }
 
 .home-nav.fixed.top:after,
@@ -33,10 +48,6 @@ Home Bottom Nav Bar (home-nav.php)
   background-repeat: repeat;
   left: 0;
   z-index: 5;
-}
-
-.home-nav.bottom {
-  bottom: 0;
 }
 
 .home-nav.bottom:before,
@@ -54,26 +65,68 @@ Home Bottom Nav Bar (home-nav.php)
   z-index: 5;
 }
 
-.home-nav a {
-  color: $white;
-  padding: 15px 10px;
-}
+// Mobile Nav Bar (home-nav.php)
+// ------------------------------
 
-.home-nav .navbar-brand>img {
-  width: 230px;
-  display: inline-block;
-}
+.nav-overlay {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  background-color: $color-prim;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  @include transition(.5s ease);
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 
-.home-nav .navbar-brand {
-  float: none;
-  display: block;
-}
+  & a{
+    padding: 8px;
+    font-size: 36px;
+    color: $color-sec;
+    text-decoration: none;
+    display: block;
+    /* Display block instead of inline */
+    font-family: $stack-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include transition(.5s ease);
 
-.home-nav a h4 {
+    &:hover,
+    &:focus{
+      color: $white;
+    }
+  }
+  /* Position the close button (top right corner) */
+  & .closebtn{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+}
+/* Position the content inside the overlay */
+.nav-overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
   text-align: center;
-  font-weight: 100;
+  margin-top: 30px;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
-
-.home-nav a:hover {
-  color: $color-sec;
+/* When the height of the screen is less than 450 pixels, 
+change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .nav-overlay{
+    & a{
+      font-size: 20px
+    }
+    & .closebtn{
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
 }
