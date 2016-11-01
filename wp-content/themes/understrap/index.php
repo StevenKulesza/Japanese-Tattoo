@@ -27,7 +27,8 @@ get_header(); ?>
 <div class="article-carousel-container">
     <div class="article-carousel-wrapper">
         <div class="">
-            <?php get_template_part('article-carousel'); ?>
+            <?php get_template_part('article-grid'); ?>
+            <?php // get_template_part('article-carousel'); ?>
         </div>
     </div>
 </div>
@@ -41,19 +42,24 @@ get_header(); ?>
                     <?php if ( have_posts() ) : ?>
 
                         <?php /* Start the Loop */ ?>
-
-                        <?php while ( have_posts() ) : the_post(); ?>
-
-                                <?php
-                                    /* Include the Post-Format-specific template for the content.
-                                     * If you want to override this in a child theme, then include a file
-                                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                                     */
-                                    get_template_part( 'loop-templates/content', get_post_format() );
-                                ?>
-
-                        <?php endwhile; ?>
-                        
+                        <div class="row">
+                        <h3 class="text-center">Posts</h3>
+                        <hr>
+                            <div class="grid">
+                                <div class="grid-sizer"></div>
+                                <?php while ( have_posts() ) : the_post(); ?>
+                                        
+                                        <?php
+                                            /* Include the Post-Format-specific template for the content.
+                                             * If you want to override this in a child theme, then include a file
+                                             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                                             */
+                                            get_template_part( 'loop-templates/content', get_post_format() );
+                                        ?>
+                                        
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
                         <?php the_posts_navigation(); ?>
                         
                     <?php else : ?>

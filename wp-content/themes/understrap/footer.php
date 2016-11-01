@@ -71,27 +71,18 @@
     <?php get_template_part('map'); ?>
 <?php endif ?>
 
-<script type="text/javascript">
-/* Mobile Navigation Open */
-function openNav() {
-    document.getElementById("myNav").style.height = "100%";
-}
-/* Mobile Navigation Close */
-function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
-}
-
-
-jQuery('.fadeOut').owlCarousel({
-    items: 1,
-    animateOut: 'fadeOut',
-    loop: true,
-    margin: 10,
-    lazyLoad:true,
-    autoplay: true
+<!-- masonary blog ('index.php')-->
+<?php if (is_home()) : ?>
+<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+<script>
+// initialize masonary blogroll
+var $grid = jQuery('.grid').masonry({
+  itemSelector: '.grid-item',
+  percentPosition: true,
+  columnWidth: '.grid-sizer'
 });
 
-
+// or initialize the article carousel
 jQuery('.article-carousel.owl-carousel').owlCarousel({
     stagePadding: 65,
     loop:true,
@@ -110,6 +101,29 @@ jQuery('.article-carousel.owl-carousel').owlCarousel({
         }
     }
 })
+</script>
+<?php endif ?>
+
+<!-- mobile navbar pop over -->
+<script>
+/* Mobile Navigation Open */
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+/* Mobile Navigation Close */
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+
+
+jQuery('.fadeOut').owlCarousel({
+    items: 1,
+    animateOut: 'fadeOut',
+    loop: true,
+    margin: 10,
+    lazyLoad:true,
+    autoplay: true
+});
 </script>
 
 </html>

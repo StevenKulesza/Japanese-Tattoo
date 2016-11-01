@@ -93,10 +93,12 @@ a {
 //  Article
 // ------------------------------
 .feature-image-container {
-  height: 400px;
   overflow: hidden;
   background-position: center center;
   @include background-size(cover);
+
+  &.post-grid{
+  }
 }
 img.wp-post-image {
   width: 100%
@@ -104,11 +106,14 @@ img.wp-post-image {
 .single .post img.wp-post-image {
   padding: 15px 0px 30px;
 }
+.blog .grid article{
+  margin-bottom: 0;
+}
 .blog article {
   background: $white;
   margin-bottom: 30px;
   border: 1px solid rgba(131, 133, 134, 0.08);
-
+  
   & .article-text{
     padding: 20px;
   }
@@ -120,7 +125,27 @@ img.wp-post-image {
   background: $white;
   border: 1px solid #e3e2e1;
 }
+// article masonary grid ('index.pphp & content.php')
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+  & article{
+    display: block;
+    max-width: 100%;
+  }
+}
 
 //  Contact
 // ------------------------------

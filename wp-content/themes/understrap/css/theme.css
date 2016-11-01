@@ -7712,7 +7712,6 @@ a {
   padding: 5px 5px; }
 
 .feature-image-container {
-  height: 400px;
   overflow: hidden;
   background-position: center center;
   -webkit-background-size: cover;
@@ -7727,6 +7726,9 @@ img.wp-post-image {
 .single .post img.wp-post-image {
   padding: 15px 0px 30px; }
 
+.blog .grid article {
+  margin-bottom: 0; }
+
 .blog article {
   background: #fff;
   margin-bottom: 30px;
@@ -7740,6 +7742,22 @@ img.wp-post-image {
   padding: 80px;
   background: #fff;
   border: 1px solid #e3e2e1; }
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+/* ---- .grid-item ---- */
+.grid-sizer,
+.grid-item {
+  width: 33.333%; }
+
+.grid-item {
+  float: left; }
+  .grid-item article {
+    display: block;
+    max-width: 100%; }
 
 #map {
   width: 100%;
@@ -8024,6 +8042,13 @@ change the font-size of the links and position the close button again, so they d
 
 .article-carousel.owl-carousel .item {
   height: 100%; }
+
+.article-grid {
+  max-height: 150px;
+  overflow: hidden; }
+
+.article-grid img.wp-post-image {
+  min-height: 150px; }
 
 .wpcf7 input,
 .wpcf7 label,

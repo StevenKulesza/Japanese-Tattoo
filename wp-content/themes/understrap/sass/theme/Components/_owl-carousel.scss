@@ -116,3 +116,12 @@
 .article-carousel.owl-carousel .item {
   height: 100%
 }
+// article grid (article-grid.php)
+// --------------------------------
+.article-grid{
+  max-height: 150px;
+  overflow: hidden;  
+}
+.article-grid img.wp-post-image{
+  min-height: 150px
+}
