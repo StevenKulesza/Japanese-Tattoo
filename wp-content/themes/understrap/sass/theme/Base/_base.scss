@@ -5,7 +5,6 @@ p {
   font-weight: 300;
   letter-spacing: 0.5px;
 }
-
 h1,
 h2,
 h3,
@@ -17,13 +16,16 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
 h2,
 h3,
 h4,
 h5,
 h6 {
   color: $color-sec;
+
+  &.entry-title{
+    font-weight: 400;
+  }
 }
 h1{
   & span{
@@ -39,11 +41,6 @@ h1{
     letter-spacing: 3px;
   }
 
-}
-h2{
-  &.entry-title{
-    font-weight: 400;
-  }
 }
 a {
   color: $color-sec;
@@ -116,7 +113,31 @@ img.wp-post-image {
   
   & .article-text{
     padding: 20px;
+  
+    & p{
+      @include font-size(14px);
+      // font-size: 14px;
+    }
+    & .post-categories{
+      list-style: none;
+      padding-left: 3px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    & .post-categories,
+    & .fa,
+    & .read-more-link{
+      @include font-size(11px);
+      color: $color-ter;
+      @include opacity(.5);
+      letter-spacing: .5px;
+
+      & a {
+        color: $color-ter;
+      }
+    }
   }
+
 }
 .navigation.posts-navigation,
 .navigation.post-navigation {
@@ -141,6 +162,7 @@ img.wp-post-image {
 
 .grid-item {
   float: left;
+  padding: 5px;
   & article{
     display: block;
     max-width: 100%;

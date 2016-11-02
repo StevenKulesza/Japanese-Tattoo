@@ -7653,6 +7653,12 @@ h4,
 h5,
 h6 {
   color: #97722E; }
+  h2.entry-title,
+  h3.entry-title,
+  h4.entry-title,
+  h5.entry-title,
+  h6.entry-title {
+    font-weight: 400; }
 
 h1 span {
   color: #97722E; }
@@ -7665,9 +7671,6 @@ h1.entry-title {
   margin: -50px 0px 0px;
   font-weight: 600;
   letter-spacing: 3px; }
-
-h2.entry-title {
-  font-weight: 400; }
 
 a {
   color: #97722E;
@@ -7735,6 +7738,27 @@ img.wp-post-image {
   border: 1px solid rgba(131, 133, 134, 0.08); }
   .blog article .article-text {
     padding: 20px; }
+    .blog article .article-text p {
+      font-size: 14px;
+      font-size: 0.875rem; }
+    .blog article .article-text .post-categories {
+      list-style: none;
+      padding-left: 3px;
+      display: inline-block;
+      margin-bottom: 10px; }
+    .blog article .article-text .post-categories,
+    .blog article .article-text .fa,
+    .blog article .article-text .read-more-link {
+      font-size: 11px;
+      font-size: 0.6875rem;
+      color: #272727;
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      letter-spacing: .5px; }
+      .blog article .article-text .post-categories a,
+      .blog article .article-text .fa a,
+      .blog article .article-text .read-more-link a {
+        color: #272727; }
 
 .navigation.posts-navigation,
 .navigation.post-navigation {
@@ -7754,7 +7778,8 @@ img.wp-post-image {
   width: 33.333%; }
 
 .grid-item {
-  float: left; }
+  float: left;
+  padding: 5px; }
   .grid-item article {
     display: block;
     max-width: 100%; }

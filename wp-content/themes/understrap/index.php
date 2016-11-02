@@ -43,7 +43,7 @@ get_header(); ?>
 
                         <?php /* Start the Loop */ ?>
                         <div class="row">
-                        <h3 class="text-center">Posts</h3>
+                        <h3 class="text-center">All Work</h3>
                         <hr>
                             <div class="grid">
                                 <div class="grid-sizer"></div>

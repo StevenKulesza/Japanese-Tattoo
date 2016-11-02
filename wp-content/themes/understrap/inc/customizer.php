@@ -18,6 +18,11 @@ function understrap_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'understrap_customize_register' );
 
+function wpdocs_custom_excerpt_length( $length ) {
+    return 16;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
 function understrap_theme_customize_register( $wp_customize ) {
 
     $wp_customize->add_section( 'understrap_theme_slider_options', array(
