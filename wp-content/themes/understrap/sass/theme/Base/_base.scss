@@ -103,10 +103,12 @@ img.wp-post-image {
 .single .post img.wp-post-image {
   padding: 15px 0px 30px;
 }
-.blog .grid article{
+.blog .grid article,
+.category .grid article{
   margin-bottom: 0;
 }
-.blog article {
+.blog article,
+.category article {
   background: $white;
   margin-bottom: 30px;
   border: 1px solid rgba(131, 133, 134, 0.08);
@@ -158,6 +160,12 @@ img.wp-post-image {
 .grid-sizer,
 .grid-item {
   width: 33.333%;
+  @include media-breakpoint-down(md) {
+    width: 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
 }
 
 .grid-item {

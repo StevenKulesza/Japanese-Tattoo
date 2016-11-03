@@ -72,7 +72,7 @@
 <?php endif ?>
 
 <!-- masonary blog ('index.php')-->
-<?php if (is_home()) : ?>
+<?php if (is_home() || is_category()) : ?>
 <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 <script>
 // initialize masonary blogroll

@@ -7729,26 +7729,34 @@ img.wp-post-image {
 .single .post img.wp-post-image {
   padding: 15px 0px 30px; }
 
-.blog .grid article {
+.blog .grid article,
+.category .grid article {
   margin-bottom: 0; }
 
-.blog article {
+.blog article,
+.category article {
   background: #fff;
   margin-bottom: 30px;
   border: 1px solid rgba(131, 133, 134, 0.08); }
-  .blog article .article-text {
+  .blog article .article-text,
+  .category article .article-text {
     padding: 20px; }
-    .blog article .article-text p {
+    .blog article .article-text p,
+    .category article .article-text p {
       font-size: 14px;
       font-size: 0.875rem; }
-    .blog article .article-text .post-categories {
+    .blog article .article-text .post-categories,
+    .category article .article-text .post-categories {
       list-style: none;
       padding-left: 3px;
       display: inline-block;
       margin-bottom: 10px; }
     .blog article .article-text .post-categories,
     .blog article .article-text .fa,
-    .blog article .article-text .read-more-link {
+    .blog article .article-text .read-more-link,
+    .category article .article-text .post-categories,
+    .category article .article-text .fa,
+    .category article .article-text .read-more-link {
       font-size: 11px;
       font-size: 0.6875rem;
       color: #272727;
@@ -7757,7 +7765,10 @@ img.wp-post-image {
       letter-spacing: .5px; }
       .blog article .article-text .post-categories a,
       .blog article .article-text .fa a,
-      .blog article .article-text .read-more-link a {
+      .blog article .article-text .read-more-link a,
+      .category article .article-text .post-categories a,
+      .category article .article-text .fa a,
+      .category article .article-text .read-more-link a {
         color: #272727; }
 
 .navigation.posts-navigation,
@@ -7776,6 +7787,14 @@ img.wp-post-image {
 .grid-sizer,
 .grid-item {
   width: 33.333%; }
+  @media (max-width: 991px) {
+    .grid-sizer,
+    .grid-item {
+      width: 50%; } }
+  @media (max-width: 767px) {
+    .grid-sizer,
+    .grid-item {
+      width: 100%; } }
 
 .grid-item {
   float: left;
