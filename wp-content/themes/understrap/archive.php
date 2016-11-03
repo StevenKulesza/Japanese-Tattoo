@@ -42,10 +42,10 @@ get_header(); ?>
                                      */
                                     get_template_part( 'loop-templates/content', get_post_format() );
                                 ?>
-                            </div>
-                        </div>
+                            
                             <?php endwhile; ?>
-
+                        </div>
+                    </div>
                                 <?php the_posts_navigation(); ?>
 
                             <?php else : ?>

@@ -35,7 +35,7 @@
 				?>
 		        
 			</div><!-- .entry-content -->
-	  </div>
+	  </div> <!-- article text -->
 	 </a>
 	</article><!-- #post-## -->
 </div>
