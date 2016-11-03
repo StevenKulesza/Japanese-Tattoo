@@ -7714,6 +7714,9 @@ a {
   background: yellow;
   padding: 5px 5px; }
 
+.page .feature-image-container {
+  height: 350px; }
+
 .feature-image-container {
   overflow: hidden;
   background-position: center center;
