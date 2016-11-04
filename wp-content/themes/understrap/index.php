@@ -24,14 +24,14 @@ get_header(); ?>
     // Do nothing...or?
     }
     ?>
-<div class="article-carousel-container">
+<!-- <div class="article-carousel-container">
     <div class="article-carousel-wrapper">
         <div class="">
-            <?php get_template_part('article-grid'); ?>
+            <?php // get_template_part('article-grid'); ?>
             <?php // get_template_part('article-carousel'); ?>
         </div>
     </div>
-</div>
+</div> -->
     <div class="wrapper" id="wrapper-index">
 	   <div id="content" class="container">
             <div class="row">
@@ -44,7 +44,9 @@ get_header(); ?>
                         <?php /* Start the Loop */ ?>
                         <div class="row">
                         <h3 class="text-center">All Work</h3>
-                        <hr>
+                        <div class="text-center category-list">
+                            <?php list_cats() ?>
+                        </div>
                             <div class="grid">
                                 <div class="grid-sizer"></div>
                                 <?php while ( have_posts() ) : the_post(); ?>

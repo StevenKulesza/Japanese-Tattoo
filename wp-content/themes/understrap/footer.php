@@ -82,6 +82,8 @@ var $grid = jQuery('.grid').masonry({
   columnWidth: '.grid-sizer'
 });
 
+
+
 // or initialize the article carousel
 jQuery('.article-carousel.owl-carousel').owlCarousel({
     stagePadding: 65,

@@ -6,11 +6,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     
-    <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?> 
+    <?php // echo get_the_post_thumbnail( $post->ID, 'large' ); ?> 
 
 	<header class="entry-header">
 
-		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<?php the_title( '<h2 class="entry-title text-center">', '</h2>' ); ?>
 
 	</header><!-- .entry-header -->
 	<hr>

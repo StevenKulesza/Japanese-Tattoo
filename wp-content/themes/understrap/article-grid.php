@@ -16,6 +16,5 @@
         </div>
     </div>
     <?php endwhile; // end of the loop. ?>
-    <?php get_categories() ?>
     </div>
 </div>

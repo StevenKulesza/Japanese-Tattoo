@@ -7708,14 +7708,15 @@ a {
   margin-top: 0; }
 
 #page {
-  margin-top: 60px; }
+  margin-top: 100px; }
 
 .post-edit-link {
   background: yellow;
   padding: 5px 5px; }
 
 .page .feature-image-container {
-  height: 350px; }
+  height: 350px;
+  margin-top: -20px; }
 
 .feature-image-container {
   overflow: hidden;
@@ -7805,6 +7806,22 @@ img.wp-post-image {
   .grid-item article {
     display: block;
     max-width: 100%; }
+
+.category-list {
+  padding: 1rem 2rem;
+  margin: 15px 5px; }
+
+.cat-item-all,
+.cat-item {
+  background-color: #fff;
+  display: inline-block; }
+  .cat-item-all a,
+  .cat-item a {
+    font-size: 15px;
+    font-size: 0.9375rem;
+    color: #141414;
+    padding: 10px 15px;
+    display: block; }
 
 #map {
   width: 100%;

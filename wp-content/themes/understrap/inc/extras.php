@@ -46,3 +46,5 @@ function change_logo_class($html)
 	$html = str_replace('class="custom-logo-link"', 'class="navbar-brand" custom-logo-link', $html);
 	return $html;
 }
+
+

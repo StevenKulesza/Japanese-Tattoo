@@ -26,11 +26,13 @@ get_header(); ?>
                                 the_archive_title( '<h2 class="page-title text-center">', '</h2>' );
                                 the_archive_description( '<div class="taxonomy-description">', '</div>' );
                             ?>
-                            <hr>
                         </header><!-- .page-header -->
 
                         <?php /* Start the Loop */ ?>
                         <div class="row">
+                         <div class="text-center category-list">
+                            <?php list_cats() ?>
+                        </div>
                             <div class="grid">
                             <div class="grid-sizer"></div>
                             <?php while ( have_posts() ) : the_post(); ?>
