@@ -186,12 +186,12 @@ img.wp-post-image {
 }
 .cat-item-all,
 .cat-item{
-  background-color: $white;
+  background-color: $color-sec;
   display: inline-block;
-  
+
   a{
     @include font-size(15px);
-    color: #141414;
+    color: $white;
     padding: 10px 15px;
     display: block;
   }
