@@ -188,6 +188,7 @@ img.wp-post-image {
 .cat-item{
   background-color: $color-sec;
   display: inline-block;
+  margin: 2px;
 
   a{
     @include font-size(15px);

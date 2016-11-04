@@ -16,8 +16,9 @@ get_header(); ?>
         <div class="row">
             <div class="col-sm-3">
             <h5 class="footer-header"><i class="fa fa-comments"></i>  Contact Us</h5>
+            <p>For Fastest Response Call:<br>
+            <a href="tel:<?php echo get_theme_mod( 'themeslug_phone' ); ?>"><?php echo get_theme_mod( 'themeslug_phone' ); ?></a></p>
             <p><a href="mailto:<?php echo get_theme_mod( 'themeslug_email' ); ?>"><?php echo get_theme_mod( 'themeslug_email' ); ?></a></p>
-            <p><a href="tel:<?php echo get_theme_mod( 'themeslug_phone' ); ?>"><?php echo get_theme_mod( 'themeslug_phone' ); ?></a></p>
             </div>
             <div class="col-sm-3">
             <h5  class="footer-header"><i class="fa fa-map-marker"></i> Find Us</h5>

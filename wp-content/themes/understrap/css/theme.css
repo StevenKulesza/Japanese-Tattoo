@@ -7814,7 +7814,8 @@ img.wp-post-image {
 .cat-item-all,
 .cat-item {
   background-color: #97722E;
-  display: inline-block; }
+  display: inline-block;
+  margin: 2px; }
   .cat-item-all a,
   .cat-item a {
     font-size: 15px;

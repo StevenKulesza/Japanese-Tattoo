@@ -28,8 +28,9 @@
                         </div>
                         <div class="col-sm-3">
                         <h5 class="footer-header">Contact Us</h5>
-                        <p><?php echo get_theme_mod( 'themeslug_email' ); ?></p>
-                        <p><?php echo get_theme_mod( 'themeslug_phone' ); ?></p>
+                        <p>For Fastest Response Call:<br>
+                        <a href="tel:<?php echo get_theme_mod( 'themeslug_phone' ); ?>"><?php echo get_theme_mod( 'themeslug_phone' ); ?></a></p>
+                        <p><a href="mailto:<?php echo get_theme_mod( 'themeslug_email' ); ?>"><?php echo get_theme_mod( 'themeslug_email' ); ?></a></p>
                         </div>
                         <div class="col-sm-3">
                         <h5  class="footer-header">Find Us</h5>
