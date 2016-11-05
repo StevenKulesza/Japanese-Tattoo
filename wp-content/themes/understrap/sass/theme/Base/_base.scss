@@ -1,5 +1,13 @@
 //  Main Text 
 // ------------------------------
+body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
 p {
   font-family: $stack-serif;
   font-weight: 300;
@@ -45,8 +53,10 @@ h1{
 a {
   color: $color-sec;
   @include transition(.5s ease-out);
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
+    cursor: pointer;
   }
 }
 //  Text Align
@@ -79,7 +89,7 @@ a {
   margin-top: 0;
 }
 #page {
-  margin-top: 100px;
+  margin-top: 90px;
 }
 // admin only
 .post-edit-link {
@@ -97,8 +107,14 @@ a {
   overflow: hidden;
   background-position: center center;
   @include background-size(cover);
-
-  &.post-grid{
+  
+  & img{
+    @include transition(ease 3s);
+    &:hover{
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
   }
 }
 img.wp-post-image {
