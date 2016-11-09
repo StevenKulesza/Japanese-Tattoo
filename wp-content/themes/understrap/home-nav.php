@@ -2,12 +2,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-2 text-center">
-				<a class="link" href="<?php bloginfo('url'); ?>/<?php echo get_theme_mod( 'themeslug_menu_item_1_link' ); ?>">
+				<a id="link1" class="link" href="<?php bloginfo('url'); ?>/<?php echo get_theme_mod( 'themeslug_menu_item_1_link' ); ?>">
 				<h5><?php echo get_theme_mod( 'themeslug_menu_item_1' ); ?></h5>
 				</a>
 			</div>
 			<div class="col-sm-2 text-center">
-				<a class="link" href="<?php bloginfo('url'); ?>/<?php echo get_theme_mod( 'themeslug_menu_item_2_link' ); ?>">
+				<a  id="link2" class="link" href="<?php bloginfo('url'); ?>/<?php echo get_theme_mod( 'themeslug_menu_item_2_link' ); ?>">
 				<h5><?php echo get_theme_mod( 'themeslug_menu_item_2' ); ?></h5>
 				</a>
 			</div>
@@ -20,12 +20,12 @@
             <?php } else { the_custom_logo(); } ?><!-- end custom logo -->
 			</div>                                
 			<div class="col-sm-2 text-center">
-				<a class="link" href="<?php bloginfo('url'); ?>/<?php echo get_theme_mod( 'themeslug_menu_item_3_link' ); ?>">
+				<a  id="link3" class="link" href="<?php bloginfo('url'); ?>/<?php echo get_theme_mod( 'themeslug_menu_item_3_link' ); ?>">
 				<h5><?php echo get_theme_mod( 'themeslug_menu_item_3' ); ?></h5>
 				</a>
 			</div>
 			<div class="col-sm-2 text-center">
-				<a class="link" href="<?php bloginfo('url'); ?>/<?php echo get_theme_mod( 'themeslug_menu_item_4_link' ); ?>">
+				<a  id="link4" class="link" href="<?php bloginfo('url'); ?>/<?php echo get_theme_mod( 'themeslug_menu_item_4_link' ); ?>">
 				<h5><?php echo get_theme_mod( 'themeslug_menu_item_4' ); ?></h5>
 				</a>
 			</div>

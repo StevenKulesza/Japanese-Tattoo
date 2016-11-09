@@ -27,7 +27,8 @@
       -moz-transform: translateY(-3px);
       transform: translateY(-3px);
     }
-    &:hover{
+    &:hover,
+    {
       &:after{
         height: 2px;
         opacity: 1;
@@ -41,7 +42,8 @@
       font-weight: 100;
       @include transition(.5s ease);
 
-      &:hover {
+      &:hover,
+      &.hover {
         color: $white;
       }
     }
