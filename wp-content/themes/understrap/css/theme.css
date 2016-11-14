@@ -7898,12 +7898,14 @@ img.wp-post-image {
       -webkit-transform: translateY(-3px);
       -moz-transform: translateY(-3px);
       transform: translateY(-3px); }
-    .home-nav a.link:hover:after {
-      height: 2px;
-      opacity: 1;
-      -webkit-transform: translateY(0px);
-      -moz-transform: translateY(0px);
-      transform: translateY(0px); }
+    .home-nav a.link:hover, .home-nav a.link.hover {
+      color: #fff; }
+      .home-nav a.link:hover:after, .home-nav a.link.hover:after {
+        height: 2px;
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        transform: translateY(0px); }
     .home-nav a.link h5 {
       text-align: center;
       font-weight: 100;

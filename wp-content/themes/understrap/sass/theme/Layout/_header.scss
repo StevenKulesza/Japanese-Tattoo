@@ -28,7 +28,9 @@
       transform: translateY(-3px);
     }
     &:hover,
-    {
+    &.hover {
+      color: $white;
+      
       &:after{
         height: 2px;
         opacity: 1;

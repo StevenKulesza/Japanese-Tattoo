@@ -118,8 +118,8 @@ function closeNav() {
     document.getElementById("myNav").style.height = "0%";
 }
 
-
-jQuery('.fadeOut').owlCarousel({
+// fade the owl carousel on home page
+var owl = jQuery('.fadeOut').owlCarousel({
     items: 1,
     animateOut: 'fadeOut',
     loop: true,
@@ -127,6 +127,16 @@ jQuery('.fadeOut').owlCarousel({
     lazyLoad:true,
     autoplay: true
 });
+
+
+// hover each nav item iteration when slide is active
+var count = 0;
+var linksLen = jQuery('a.link').length;
+owl.on('changed.owl.carousel', function(event) {
+  count= ++count%linksLen;
+  jQuery('.link').removeClass('hover').eq(count).addClass('hover')
+})
+
 </script>
 
 </html>
