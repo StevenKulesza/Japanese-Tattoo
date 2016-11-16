@@ -1,16 +1,39 @@
 // owl carousel (sidebar-hero.php)
 // --------------------------------
 
-.fadeOut.owl-carousel .item {
-  height: 100vh;
-  padding: 1rem;
-  width: 100%;
-}
+.fadeOut.owl-carousel {
+  & .item {
+    height: 100vh;
+    padding: 1rem;
+    width: 100%;
 
-.owl-carousel .item h4 {
-  color: $white;
-  font-weight: 400;
-  margin-top: 0rem
+    & h4 {
+      color: $white;
+      font-weight: 400;
+      margin-top: 0rem
+    }
+  }
+  & .owl-nav{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+
+    & .owl-prev{
+      color: $white;
+      background: $color-prim;
+      @include font-size(20px);
+      padding: 10px 20px;
+      display: inline-block;
+    }
+    & .owl-next{
+      background: $color-prim;
+      color: $white;
+      @include font-size(20px);
+      padding: 10px 20px;
+      display: inline-block;
+      float: right;
+    }
+  }
 }
 
 .owl-carousel .overlay {

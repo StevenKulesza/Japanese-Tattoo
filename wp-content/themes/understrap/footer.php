@@ -123,20 +123,23 @@ var owl = jQuery('.fadeOut').owlCarousel({
     items: 1,
     animateOut: 'fadeOut',
     loop: true,
+    nav:true,
+    navText:['<i class="fa fa-angle-double-left"></i>', '<i class="fa fa-angle-double-right"></i>'],
     margin: 10,
     lazyLoad:true,
     autoplay: true
 });
-
-
-// hover each nav item iteration when slide is active
-var count = 0;
-var linksLen = jQuery('a.link').length;
+// hover nav item 4 when slide 3 is active (work section)
 owl.on('changed.owl.carousel', function(event) {
-  count= ++count%linksLen;
-  jQuery('.link').removeClass('hover').eq(count).addClass('hover')
+  if (jQuery('.owl-item.active>.item.slide3').length>0) {
+    jQuery('#link3').addClass('hover');
+  } else if (jQuery('.owl-item.active>.item.slide4').length>0) {
+    jQuery('.link').removeClass('hover');
+    jQuery('#link4').addClass('hover');
+  } else {
+    jQuery('.link').removeClass('hover');
+  }
 })
-
 </script>
 
 </html>

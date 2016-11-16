@@ -7929,6 +7929,9 @@ img.wp-post-image {
       width: 230px;
       display: inline-block; }
 
+.home-nav a.link.hover h5 {
+  color: #fff; }
+
 .home-nav.fixed.top:after,
 .section-divider-container:after,
 .article-carousel-container:after {
@@ -8062,11 +8065,30 @@ change the font-size of the links and position the close button again, so they d
   height: 100vh;
   padding: 1rem;
   width: 100%; }
+  .fadeOut.owl-carousel .item h4 {
+    color: #fff;
+    font-weight: 400;
+    margin-top: 0rem; }
 
-.owl-carousel .item h4 {
-  color: #fff;
-  font-weight: 400;
-  margin-top: 0rem; }
+.fadeOut.owl-carousel .owl-nav {
+  position: absolute;
+  top: 0px;
+  width: 100%; }
+  .fadeOut.owl-carousel .owl-nav .owl-prev {
+    color: #fff;
+    background: #1a1a1a;
+    font-size: 20px;
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    display: inline-block; }
+  .fadeOut.owl-carousel .owl-nav .owl-next {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 20px;
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    display: inline-block;
+    float: right; }
 
 .owl-carousel .overlay {
   -moz-box-sizing: border-box;
