@@ -72,7 +72,7 @@
     <?php get_template_part('map'); ?>
 <?php endif ?>
 
-<!-- masonary blog ('index.php')-->
+<!-- masonary blog ('index.php') implemented with php-->
 <?php if (is_home() || is_category()) : ?>
 <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 <script>
@@ -82,9 +82,6 @@ var $grid = jQuery('.grid').masonry({
   percentPosition: true,
   columnWidth: '.grid-sizer'
 });
-
-
-
 // or initialize the article carousel
 jQuery('.article-carousel.owl-carousel').owlCarousel({
     stagePadding: 65,
@@ -106,9 +103,18 @@ jQuery('.article-carousel.owl-carousel').owlCarousel({
 })
 </script>
 <?php endif ?>
+<script type="text/javascript">
+// 
+// 
+// 
+// 
+// Theme Modifications
+// 
+// 
+// 
+// 
 
-<!-- mobile navbar pop over -->
-<script>
+
 /* Mobile Navigation Open */
 function openNav() {
     document.getElementById("myNav").style.height = "100%";
@@ -130,16 +136,20 @@ var owl = jQuery('.fadeOut').owlCarousel({
     autoplay: true
 });
 // hover nav item 4 when slide 3 is active (work section)
-owl.on('changed.owl.carousel', function(event) {
-  if (jQuery('.owl-item.active>.item.slide3').length>0) {
-    jQuery('#link3').addClass('hover');
-  } else if (jQuery('.owl-item.active>.item.slide4').length>0) {
-    jQuery('.link').removeClass('hover');
-    jQuery('#link4').addClass('hover');
-  } else {
-    jQuery('.link').removeClass('hover');
-  }
-})
-</script>
+var $links = jQuery('.link');
+// on slide change listener
+owl.on('changed.owl.carousel', function(event){
+    var $active = jQuery('.owl-item.active');
+    
+    if( $active.children('.item.slide3').length > 0 ){
+        jQuery('#link3').addClass('hover');
+    } else if ($active.children('.item.slide4').length > 0){
+        $links.removeClass('hover');
+        jQuery('#link4').addClass('hover');    
+    } else {
+        $links.removeClass('hover');
+    }
+});
 
+</script>
 </html>

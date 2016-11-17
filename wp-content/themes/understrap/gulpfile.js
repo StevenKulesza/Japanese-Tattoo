@@ -57,8 +57,8 @@ var browserSyncWatchFiles = [
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
-    proxy: "localhost/theme_test/",
-    notify: false
+    proxy: "localhost/underscores/",
+    notify: true
 };
 
 // Defining requirements
