@@ -7723,6 +7723,9 @@ a {
 
 #page {
   margin-top: 90px; }
+  @media (max-width: 767px) {
+    #page {
+      margin-top: 0px; } }
 
 .post-edit-link {
   background: yellow;
@@ -7930,6 +7933,9 @@ img.wp-post-image {
   .home-nav.fixed.top {
     position: fixed;
     top: 0; }
+    @media (max-width: 767px) {
+      .home-nav.fixed.top {
+        position: relative; } }
   .home-nav.bottom {
     bottom: 0; }
   .home-nav .navbar-brand {
@@ -7987,7 +7993,7 @@ img.wp-post-image {
   transition: 0.5s ease;
   /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   /* Position the close button (top right corner) */ }
-  .nav-overlay a {
+  .nav-overlay a.link {
     padding: 8px;
     font-size: 36px;
     color: #97722E;
@@ -8003,7 +8009,7 @@ img.wp-post-image {
     -ms-transition: 0.5s ease;
     -o-transition: 0.5s ease;
     transition: 0.5s ease; }
-    .nav-overlay a:hover, .nav-overlay a:focus {
+    .nav-overlay a.link:hover, .nav-overlay a.link:focus {
       color: #fff; }
   .nav-overlay .closebtn {
     position: absolute;

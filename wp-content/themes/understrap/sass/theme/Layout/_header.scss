@@ -53,6 +53,9 @@
   &.fixed.top {
     position: fixed;
     top: 0;
+    @include media-breakpoint-down(sm) { 
+      position: relative;
+    }
   }
   &.bottom {
     bottom: 0;
@@ -117,7 +120,7 @@
   @include transition(.5s ease);
   /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 
-  & a{
+  & a.link{
     padding: 8px;
     font-size: 36px;
     color: $color-sec;
