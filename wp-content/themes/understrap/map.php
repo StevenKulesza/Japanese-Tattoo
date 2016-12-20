@@ -1,12 +1,10 @@
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
  --> 
- <script src="https://maps.googleapis.com/maps/api/js?key=
-AIzaSyC4GuDYcyvVfts7Mhh-X10Fhle9k1ptI3g&callback=init" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4GuDYcyvVfts7Mhh-X10Fhle9k1ptI3g&callback=init" async defer></script>
 <script type="text/javascript">
 // When the window has finished loading create our google map below
-        google.maps.event.addDomListener(window, 'load', init);
-        var myLatlng = new google.maps.LatLng(33.7466244,-84.3745782);
         function init() {
+            var myLatlng = new google.maps.LatLng(33.7466244,-84.3745782);
             var mapOptions = {
                 zoom: 17,
                 disableDefaultUI: true,
