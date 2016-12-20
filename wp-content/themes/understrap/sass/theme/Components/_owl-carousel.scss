@@ -17,7 +17,9 @@
     position: absolute;
     top: 0px;
     width: 100%;
-
+    @include media-breakpoint-down(sm) { 
+      display: none;
+    }
     & .owl-prev{
       color: $white;
       background: $color-prim;

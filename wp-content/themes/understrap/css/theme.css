@@ -8082,6 +8082,9 @@ change the font-size of the links and position the close button again, so they d
   position: absolute;
   top: 0px;
   width: 100%; }
+  @media (max-width: 767px) {
+    .fadeOut.owl-carousel .owl-nav {
+      display: none; } }
   .fadeOut.owl-carousel .owl-nav .owl-prev {
     color: #fff;
     background: #1a1a1a;
