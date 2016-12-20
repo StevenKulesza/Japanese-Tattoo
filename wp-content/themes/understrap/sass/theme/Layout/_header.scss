@@ -58,7 +58,9 @@
     }
   }
   &.bottom {
-    bottom: 0;
+    @include media-breakpoint-up(md) { 
+      bottom: 0;
+    }
   }
   // the logo
   & .navbar-brand {

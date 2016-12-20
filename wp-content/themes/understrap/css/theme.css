@@ -7936,8 +7936,9 @@ img.wp-post-image {
     @media (max-width: 767px) {
       .home-nav.fixed.top {
         position: relative; } }
-  .home-nav.bottom {
-    bottom: 0; }
+  @media (min-width: 768px) {
+    .home-nav.bottom {
+      bottom: 0; } }
   .home-nav .navbar-brand {
     float: none;
     display: block;
