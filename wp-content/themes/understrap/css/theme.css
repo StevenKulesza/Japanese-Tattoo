@@ -7731,6 +7731,9 @@ a {
 .page .feature-image-container {
   height: 350px;
   margin-top: -20px; }
+  @media (max-width: 767px) {
+    .page .feature-image-container {
+      height: 250px; } }
 
 .feature-image-container {
   overflow: hidden;
