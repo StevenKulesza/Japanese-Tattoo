@@ -8209,3 +8209,8 @@ change the font-size of the links and position the close button again, so they d
 .wpcf7 textarea {
   line-height: 28px;
   padding: 10px; }
+
+@media (min-width: 576px) {
+  .slider-pro img.sp-image {
+    max-height: 700px !important;
+    width: auto !important; } }

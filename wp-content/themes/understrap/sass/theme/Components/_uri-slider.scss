@@ -1,0 +1,6 @@
+.slider-pro img.sp-image{
+	@include media-breakpoint-up(sm){
+		max-height: 700px !important;
+		width: auto !important;
+	}
+}
