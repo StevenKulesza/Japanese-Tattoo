@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var imagemin = require('gulp-imagemin');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -31,7 +32,12 @@ gulp.task('scripts', function() {
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
-
+// Minify Images
+gulp.task('imagemin', () =>
+    gulp.src('../uploads/')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'))
+);
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('js/*.js', ['lint', 'scripts']);
@@ -39,7 +45,7 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'imagemin']);
 // Defining base pathes
 var basePaths = {
     bower: './bower_components/',
